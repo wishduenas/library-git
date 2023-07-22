@@ -9,6 +9,7 @@ according to the following format:
 
 "Book title ([Edition number]) - Lastname.pdf"
 
-Then, open the register option at the bottom of the Library and fill in the info required. Consider that Branches will be represented
-as cabinets, while Topics will be the shelves. Push the Finish button and copy the text which appears in the white box. Finally, paste
-that code into the books.js file found in the assets folder within the Library folder.
+Then, open the register option at the bottom of the Library and fill in the info required. Book title, Edition number and the authors'
+Lastnames must be written exactly as you did in the file name. Consider that Branches will be represented as cabinets, while Topics
+will be the shelves. Push the Finish button and copy the text which appears in the white box. Finally, paste that code into the
+books.js file found in the assets folder within the Library folder.
