@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Library</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/library.css">
+        <link rel="icon" type="image/x-icon" href="assets/library.ico">
+        <script src="assets/books.js"></script>
+        <script src="assets/library.js"></script>
+    </head>
+    
+    <body onload="main()">
+        <div class="row">
+            <div class="col-12" id="header">Library</div>
+        </div>
+        <div class="row" id="library">
+        </div>
+        <div class="row">
+            <div class="col-12" id="footer">
+                <a href="Register.html"><mark>Register</mark></a>
+            </div>
+        </div>
+        <div id="hand">
+            <div id="selection">
+                <h1 id="name"></h1>
+                <h2 id="author"></h2>
+                <h2 id="edition"></h2>
+                <div id="close">&#9587</div>
+                <div id="read">&#10149</div>
+            </div>
+        </div>
+        <div id="viewer">
+            <div id="leave">&#9587</div>
+            <object id="reader" type="application/pdf"></object>
+        </div>
+    </body>
+</html>

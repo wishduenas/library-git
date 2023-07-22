@@ -1,0 +1,166 @@
+.col-1 {width: 6.33%;}
+.col-2 {width: 14.66%;}
+.col-3 {width: 23%;}
+.col-4 {width: 31.33%;}
+.col-5 {width: 39.66%;}
+.col-6 {width: 48%;}
+.col-7 {width: 56.33%;}
+.col-8 {width: 64.66%;}
+.col-9 {width: 73%;}
+.col-10 {width: 81.33%;}
+.col-11 {width: 89.66%;}
+.col-12 {width: 98%;}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    margin: 1%;
+}
+.back {
+    box-shadow: 0px 80px 20px 0px rgba(15, 6, 0, 0.6) inset;
+    background-color: rgba(80, 40, 0, 0.4);
+    margin-top: 3%;
+    padding-top: 5%;
+}
+.back::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.book {
+    float: left;
+    height: 160px;
+    width: 8%;
+    margin: 0% 0% 0% 1%;
+    padding: 2% 0% 2% 0%;
+    box-shadow: 2px -3px 3px 0px rgb(60, 25, 0);
+    border-radius: 2px;
+    font-family: montserrat;
+    font-size: 0.8em;
+    color: #e9c763;
+    text-align: left;
+    writing-mode: sideways-lr;
+    overflow: hidden;
+    animation: bookout 0.6s linear alternate both paused;
+    cursor: pointer;
+}
+.cabinet {
+    box-shadow: 0px 0px 15px 0px rgb(60, 25, 0);
+    background-color: rgba(255, 240, 200, 0.15);
+}
+.label {
+    background-color: white;
+    padding: 3px;
+    font-family: montserrat;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+* {box-sizing: border-box}
+
+#close {
+    position: absolute;
+    top: -5%;
+    right: -4%;
+    font-size: 2em;
+    cursor: pointer;
+}
+#edition {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    margin: 0;
+}
+#footer {
+    box-shadow: 0px 0px 15px 0px rgb(60, 25, 0);
+    background-color: rgba(255, 240, 200, 0.15);
+    color: white;
+    padding: 2%;
+    text-align: left;
+}
+#hand {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    transition: background-color 1s 1s;
+}
+#header {
+    font-size: 2em;
+    font-family: georgia;
+    box-shadow: 0px 0px 15px 0px rgb(60, 25, 0);
+    background-color: #ca641c;
+    color: white;
+}
+#leave {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+    color: darkorange;
+    cursor: pointer;
+}
+#read {
+    position: absolute;
+    bottom: -6%;
+    right: -7%;
+    font-size: 4em;
+    cursor: pointer;
+}
+#reader {
+    height: 100%;
+    width: 100%;
+}
+#selection {
+    height: 80%;
+    width: 30%;
+    margin: 5% 35% 5% 35%;
+    padding: 5%;
+    border-radius: 5px;
+    color: #e9c763;
+    font-family: georgia;
+    top: -100%;
+    left: 0;
+    position: relative;
+    z-index: 2;
+    transition: top 0.5s cubic-bezier(.22,.61,.36,1) 0.5s;
+}
+#viewer {
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    z-index: 2;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    display: block;
+}
+
+@keyframes bookout {
+    0% {transform: scale(1,1) translateY(0)}
+    50% {transform: scale(1.3,1.3) translateY(-40%)}
+    100% {transform: scale(1.3,1.3) translateY(-500%)}
+}
+
+body {
+    background-image: linear-gradient(#ca641c, #ca641c), url(wood1.jpg);
+    background-blend-mode: multiply;
+    min-height: 100%;
+    font-family: "montserrat black";
+    text-align: center;
+}
+br {
+    margin-bottom: 7px;
+}
+mark {
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0px 0px 5px 0px rgb(60, 25, 0);
+    cursor: default;
+}
