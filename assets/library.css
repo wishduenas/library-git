@@ -11,6 +11,7 @@
 .col-11 {width: 89.66%;}
 .col-12 {width: 98%;}
 [class*="col-"] {
+    float: left;
     padding: 15px;
     margin: 1%;
 }
@@ -104,9 +105,6 @@
     font-size: 1.5em;
     color: darkorange;
     cursor: pointer;
-}
-#library {
-    display: flex;
 }
 #read {
     position: absolute;
