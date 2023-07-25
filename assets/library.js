@@ -186,5 +186,10 @@ function main() {
             }
         }
     }
+
+    //Using masonry to set layout
+    $("#library").masonry({
+        itemSelector: ".cabinet"
+    });
 }
 );
