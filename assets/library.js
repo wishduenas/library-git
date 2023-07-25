@@ -23,18 +23,31 @@ function Branch(book) {
     this.topics = [new Topic(book)];
 }
 
-function Partition(array, low, high) {
-    var pivot = array[high].name;
+function Partition(array, low, high, type) {
     var i = low - 1;
     var a;
     var b;
-    for (j = low; j <= high - 1; j++) {
-        if (array[j].name.localeCompare(pivot) == -1) {
-            i++;
-            a = array[i];
-            b = array[j];
-            array[i] = b;
-            array[j] = a;
+    if (type == "size") {
+        var pivot = array[high].topics.length;
+        for (j = low; j <= high -1; j++) {
+            if (array[j].topics.length > pivot) {
+                i++;
+                a = array[i];
+                b = array[j];
+                array[i] = b;
+                array[j] = a;
+            }
+        }
+    } else {
+        var pivot = array[high].name;
+        for (j = low; j <= high - 1; j++) {
+            if (array[j].name.localeCompare(pivot) == -1) {
+                i++;
+                a = array[i];
+                b = array[j];
+                array[i] = b;
+                array[j] = a;
+            }
         }
     }
     a = array[i + 1];
@@ -44,17 +57,18 @@ function Partition(array, low, high) {
     return i + 1;
 }
 
-function Sort(array, low, high) {
+function Sort(array, low, high, type = "alphabetical") {
     var pi;
     if (low < high) {
-        pi = Partition(array, low, high);
-        Sort(array, low, pi - 1);
-        Sort(array, pi + 1, high);
+        pi = Partition(array, low, high, type);
+        Sort(array, low, pi - 1, type);
+        Sort(array, pi + 1, high, type);
     }
 }
 
 var onshelf;
 
+$(document).ready(
 function main() {
     var branches = [];
     var hand = document.getElementById("hand");
@@ -108,7 +122,7 @@ function main() {
         }
     }
  //Sorting alphabetically branches, topics and books
-    Sort(branches, 0, branches.length - 1);
+    Sort(branches, 0, branches.length - 1, "size");
     for (x in branches) {
         Sort(branches[x].topics, 0, branches[x].topics.length - 1);
         for (y in branches[x].topics) {
@@ -185,4 +199,10 @@ function main() {
             }
         }
     }
+
+    //Using masonry to set layout
+    $("#library").masonry({
+        itemSelector: ".cabinet"
+    });
 }
+);
