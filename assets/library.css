@@ -51,6 +51,7 @@
     background-color: white;
     padding: 3px;
     font-family: georgia;
+    font-size: smaller;
 }
 .row::after {
     content: "";
