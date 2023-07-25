@@ -23,7 +23,7 @@ function Branch(book) {
     this.topics = [new Topic(book)];
 }
 
-function Partition(array, low, high, type = "alphabetical") {
+function Partition(array, low, high, type) {
     var i = low - 1;
     var a;
     var b;
@@ -57,10 +57,10 @@ function Partition(array, low, high, type = "alphabetical") {
     return i + 1;
 }
 
-function Sort(array, low, high) {
+function Sort(array, low, high, type = "alphabetical") {
     var pi;
     if (low < high) {
-        pi = Partition(array, low, high);
+        pi = Partition(array, low, high, type);
         Sort(array, low, pi - 1);
         Sort(array, pi + 1, high);
     }
