@@ -61,8 +61,8 @@ function Sort(array, low, high, type = "alphabetical") {
     var pi;
     if (low < high) {
         pi = Partition(array, low, high, type);
-        Sort(array, low, pi - 1);
-        Sort(array, pi + 1, high);
+        Sort(array, low, pi - 1, type);
+        Sort(array, pi + 1, high, type);
     }
 }
 
