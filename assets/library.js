@@ -58,12 +58,12 @@ var onshelf;
 $(document).ready(
 function main() {
     var branches = [];
-    var hand = $("#hand");
-    var selection = $("#selection");
-    var closeBtn = $("#close");
-    var viewer = $("#viewer");
-    var reader = $("#reader");
-    var leaveBook = $("#leave");
+    var hand = document.getElementById("hand");
+    var selection = document.getElementById("selection");
+    var closeBtn = document.getElementById("close");
+    var viewer = document.getElementById("viewer");
+    var reader = document.getElementById("reader");
+    var leaveBook = document.getElementById("leave");
     
     closeBtn.onclick = function() {
         selection.style.top = "-100%";
